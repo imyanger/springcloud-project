@@ -22,7 +22,7 @@ public interface UserDao {
 	void delete(Integer id);
 	
 	/**
-	 * 修改用户信息
+	 * 更改用户信息
 	 * @author YangHao  
 	 * @time 2019年1月13日-下午3:18:56
 	 */

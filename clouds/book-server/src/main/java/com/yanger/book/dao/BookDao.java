@@ -1,39 +1,39 @@
-package com.yanger.user.dao;
+package com.yanger.book.dao;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.yanger.user.po.User;
+import com.yanger.book.po.Book;
 
 @Mapper
-public interface UserDao {
+public interface BookDao {
 	
 	/**
-	 * 新增用户
+	 * 新增书籍
 	 * @author YangHao  
 	 * @time 2019年1月13日-下午3:17:30
 	 */
-	void insert(User user);
+	void insert(Book book);
 	
 	/**
-	 * 删除用户
+	 * 删除书籍
 	 * @author YangHao  
 	 * @time 2019年1月13日-下午3:18:13
 	 */
 	void delete(Integer id);
 	
 	/**
-	 * 修改用户信息
+	 * 修改书籍
 	 * @author YangHao  
 	 * @time 2019年1月13日-下午3:18:56
 	 */
-	void update(User user);
+	void update(Book book);
 	
 	/**
-	 * 查询用户
+	 * 查询书籍
 	 * @author YangHao  
 	 * @time 2019年1月13日-下午3:19:24
 	 * @return
 	 */
-	User find(String userCode, String password);
+	Book find(String name);
 	
 }
