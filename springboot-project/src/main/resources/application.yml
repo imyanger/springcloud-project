@@ -1,0 +1,30 @@
+# 应用启动后所监听的端口，可以不配置，默认就是8080端口
+server:
+  port: 10800
+
+# 配置日志输出级别，将Spring框架设置为INFO级别，而自己所编写的代码设置为DEBUG级别
+logging:
+  level:
+    org:
+      springframework: INFO
+    com:
+      yanger: DEBUG
+
+# 数据源的配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver #com.mysql.jdbc.Driver #8.0.13的驱动连接与旧版本有更改
+    url: jdbc:mysql://localhost:3306/clouds?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone = GMT
+    username: root
+    password: 1234
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    
+#mybatis配置，设置po数据库映射文件的路径，以及mapper的xml文件路径
+mybatis:
+  typeAliasesPackage: com.yanger.*.po
+  mapperLocations: classpath*:mapper/**/*Dao.xml
+  configuration:
+    #打印mybatis的sql，方便开发
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    mapUnderscoreToCamelCase: true

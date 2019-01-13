@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yanger.user.dao.UserDao">
+
+	<!-- 通用查询结果对象，column表示数据库查询的列名，property表示java类属性  -->
+	<resultMap id="BaseResultMap" type="com.yanger.user.po.User">
+		 <id column="id" property="userId"/> 
+		 <result column="user_code" property="userCode"/> 
+		 <result column="user_name" property="userName"/> 
+		 <result column="password" property="password"/>
+	</resultMap>
+
+	<!-- 通用查询结果列-->
+	<sql id="Base_Column_List">
+		 id, user_code, user_Name, password
+	</sql>
+	
+	<!-- 完整插入一条记录-->
+	<insert id="insert" parameterType="com.yanger.user.po.User">
+		insert into user(user_code, user_name, password) values(#{userCode}, #{userName}, #{password});
+	</insert>
+	
+	<!-- 按主键删除一条记录 -->
+	<delete id="delete" parameterType="map">
+		delete from user where id = #{param1}
+	</delete>
+	
+	<!-- 更新记录 -->
+	<update id="update"  parameterType="com.yanger.user.po.User">
+		update user set user_code = #{userCode}, user_name = #{userName}, password = #{password} where id = #{id}
+	</update>
+	
+	<!-- 按主键查询一条记录 -->
+	<select id="find" resultMap="BaseResultMap" parameterType="map">
+		select <include refid="Base_Column_List" />  from user where id = #{param1}
+	</select>
+	
+</mapper>
