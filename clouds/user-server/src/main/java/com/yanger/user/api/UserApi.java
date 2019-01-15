@@ -1,5 +1,7 @@
 package com.yanger.user.api;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,11 +14,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.yanger.common.vo.ApiResponse;
 import com.yanger.user.po.User;
+import com.yanger.user.service.BookService;
 import com.yanger.user.service.UserService;
+import com.yanger.user.vo.BookVo;
 import com.yanger.user.vo.UserVo;
 
 import io.swagger.annotations.Api;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RestController
 @RequestMapping("user")
 @Api // swagger文档支持接口，方便接口查看和调用
@@ -25,8 +31,11 @@ public class UserApi {
 	@Autowired
 	UserService userService;
 	
+	@Autowired
+	BookService bookService;
+	
 	/**
-	 * 插入用户
+	 * @description 插入用户
 	 * @author YangHao  
 	 * @time 2019年1月13日-下午5:29:52
 	 * @param userVo
@@ -45,7 +54,7 @@ public class UserApi {
 	}
 
 	/**
-	 * 删除用户
+	 * @description 删除用户
 	 * @author YangHao  
 	 * @time 2019年1月13日-下午5:30:07
 	 * @param userVo
@@ -64,7 +73,7 @@ public class UserApi {
 	}
 	
 	/**
-	 * 更新用户
+	 * @description 更新用户
 	 * @author YangHao  
 	 * @time 2019年1月13日-下午5:32:08
 	 * @param userVo
@@ -83,7 +92,7 @@ public class UserApi {
 	}
 	
 	/**
-	 * 根据用户名和密码查找用户
+	 * @description 根据用户名和密码查找用户
 	 * @author YangHao  
 	 * @time 2019年1月13日-下午5:32:34
 	 * @param userVo
@@ -94,6 +103,8 @@ public class UserApi {
 		ApiResponse<User> api = new ApiResponse<>();
 		try {
 			User user = userService.findUser(userCode, password);
+			List<BookVo> books = bookService.findByIds(user.getLikes());
+			books.forEach(book -> log.info("bookService通过feign调用服务获取数据：{}", book.toString()));
 			api.setData(user);
 		} catch (Exception e) {
 			api.error("根据用户名和密码查找用户异常");

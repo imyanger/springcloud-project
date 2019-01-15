@@ -1,1 +1,7 @@
-CREATE TABLE user( `id` INT NOT NULL AUTO_INCREMENT, `user_code` VARCHAR(20), `user_name` VARCHAR(100), `password` VARCHAR(20), PRIMARY KEY (`id`) ) ENGINE=INNODB CHARSET=utf8;
+CREATE TABLE book( 
+	`id` INT NOT NULL AUTO_INCREMENT, 
+	`name` VARCHAR(100), 
+	`author` VARCHAR(100), 
+	`price` DOUBLE(6,2), 
+	PRIMARY KEY (`id`) 
+) ENGINE=INNODB CHARSET=utf8;

@@ -1,5 +1,9 @@
 package com.yanger.book.api;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,7 +33,7 @@ public class BookApi {
 	BookService bookService;
 	
 	/**
-	 * 插入书籍
+	 * @description 插入书籍
 	 * @author YangHao  
 	 * @time 2019年1月13日-下午5:29:52
 	 * @param bookVo
@@ -48,7 +53,7 @@ public class BookApi {
 	}
 
 	/**
-	 * 删除书籍
+	 * @description 删除书籍
 	 * @author YangHao  
 	 * @time 2019年1月13日-下午5:30:07
 	 * @param bookVo
@@ -67,7 +72,7 @@ public class BookApi {
 	}
 	
 	/**
-	 * 更新书籍
+	 * @description 更新书籍
 	 * @author YangHao  
 	 * @time 2019年1月13日-下午5:32:08
 	 * @param bookVo
@@ -86,7 +91,7 @@ public class BookApi {
 	}
 	
 	/**
-	 * 根据书籍名查找书籍
+	 * @description 根据书籍名查找书籍
 	 * @author YangHao  
 	 * @time 2019年1月13日-下午5:32:34
 	 * @param bookVo
@@ -103,6 +108,29 @@ public class BookApi {
 			e.printStackTrace();
 		}
 		return api;
+	}
+	
+	/**
+	 * @description 根据id查询书籍
+	 * @author YangHao  
+	 * @time 2019年1月16日-上午12:08:31
+	 * @param ids
+	 * @return
+	 */
+	@RequestMapping(value = "/{ids}", method = RequestMethod.GET)
+	public List<BookVo> findByIds(@PathVariable("ids") String ids) {
+		List<BookVo> books = new ArrayList<>(0);
+		try {
+			for (String id : ids.split(",")) {
+				BookVo bookVo = new BookVo();
+				Book book = bookService.findBookById(Integer.parseInt(id));
+				BeanUtils.copyProperties(book, bookVo);
+				books.add(bookVo);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return books;
 	}
 	
 }

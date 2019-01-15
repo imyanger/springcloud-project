@@ -20,5 +20,8 @@ public class UserVo implements Serializable {
 	
 	// 密码
 	private String password;
+	
+	//喜爱的书籍id
+	private String likes;
 
 }

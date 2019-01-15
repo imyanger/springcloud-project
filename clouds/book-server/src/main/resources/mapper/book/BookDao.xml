@@ -36,4 +36,9 @@
 		select <include refid="Base_Column_List" />  from book where name = #{name}
 	</select>
 	
+	<!-- 根据书籍id查询 -->
+	<select id="findById" resultMap="BaseResultMap" parameterType="map">
+		select <include refid="Base_Column_List" />  from book where id = #{id}
+	</select>
+	
 </mapper>

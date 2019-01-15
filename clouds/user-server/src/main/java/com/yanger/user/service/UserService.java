@@ -16,7 +16,7 @@ public class UserService {
 	private UserDao userDao;
 	
 	/**
-	 * 插入用户
+	 * @description 插入用户
 	 * @author YangHao  
 	 * @time 2019年1月13日-下午4:22:55
 	 * @param userVo
@@ -26,11 +26,12 @@ public class UserService {
 		user.setUserCode(userVo.getUserCode());
 		user.setUserName(userVo.getUserName());
 		user.setPassword(userVo.getPassword());
+		user.setLikes(userVo.getLikes());
 		userDao.insert(user);
 	}
 	
 	/**
-	 * 根据主键删除用户
+	 * @description 根据主键删除用户
 	 * @author YangHao  
 	 * @time 2019年1月13日-下午4:24:11
 	 * @param id
@@ -40,7 +41,7 @@ public class UserService {
 	}
 	
 	/**
-	 * 更改用户信息
+	 * @description 更改用户信息
 	 * @author YangHao  
 	 * @time 2019年1月13日-下午4:24:42
 	 * @param id
@@ -51,11 +52,12 @@ public class UserService {
 		user.setUserCode(userVo.getUserCode());
 		user.setUserName(userVo.getUserName());
 		user.setPassword(userVo.getPassword());
+		user.setLikes(userVo.getLikes());
 		userDao.update(user);
 	}
 	
 	/**
-	 * 根据用户名和密码查找用户
+	 * @description 根据用户名和密码查找用户
 	 * @author YangHao  
 	 * @time 2019年1月13日-下午4:28:39
 	 * @param userCode

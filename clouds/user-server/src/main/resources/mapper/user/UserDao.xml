@@ -13,12 +13,12 @@
 
 	<!-- 通用查询结果列-->
 	<sql id="Base_Column_List">
-		 id, user_code, user_Name, password
+		 id, user_code, user_Name, password, likes
 	</sql>
 	
 	<!-- 完整插入一条记录-->
 	<insert id="insert" parameterType="com.yanger.user.po.User">
-		insert into user(user_code, user_name, password) values(#{userCode}, #{userName}, #{password});
+		insert into user(user_code, user_name, password, likes) values(#{userCode}, #{userName}, #{password}), #{likes};
 	</insert>
 	
 	<!-- 按主键删除一条记录 -->
@@ -28,7 +28,7 @@
 	
 	<!-- 更新记录 -->
 	<update id="update"  parameterType="com.yanger.user.po.User">
-		update user set user_code = #{userCode}, user_name = #{userName}, password = #{password} where id = #{id}
+		update user set user_code = #{userCode}, user_name = #{userName}, password = #{password}, likes = #{likes} where id = #{id}
 	</update>
 	
 	<!-- 根据用户名和密码查询 -->

@@ -16,7 +16,7 @@ public class BookService {
 	private BookDao bookDao;
 	
 	/**
-	 * 插入书籍
+	 * @description 插入书籍
 	 * @author YangHao  
 	 * @time 2019年1月13日-下午4:22:55
 	 * @param bookVo
@@ -30,7 +30,7 @@ public class BookService {
 	}
 	
 	/**
-	 * 根据主键删除书籍
+	 * @description 根据主键删除书籍
 	 * @author YangHao  
 	 * @time 2019年1月13日-下午4:24:11
 	 * @param id
@@ -40,7 +40,7 @@ public class BookService {
 	}
 	
 	/**
-	 * 更改书籍信息
+	 * @description 更改书籍信息
 	 * @author YangHao  
 	 * @time 2019年1月13日-下午4:24:42
 	 * @param id
@@ -55,7 +55,7 @@ public class BookService {
 	}
 	
 	/**
-	 * 根据书籍查找书籍
+	 * @description 根据书籍查找书籍
 	 * @author YangHao  
 	 * @time 2019年1月13日-下午4:28:39
 	 * @param bookCode
@@ -64,6 +64,17 @@ public class BookService {
 	 */
 	public Book findBook(String name) throws Exception {
 		return bookDao.find(name);
+	}
+
+	/**
+	 * @description 根据id查找书籍
+	 * @author YangHao  
+	 * @time 2019年1月15日-下午11:48:52
+	 * @param id
+	 * @return
+	 */
+	public Book findBookById(Integer id) {
+		return bookDao.findById(id);
 	}
 	
 }
