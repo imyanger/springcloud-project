@@ -2,6 +2,7 @@ package com.yanger.user.api;
 
 import java.util.List;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.yanger.common.vo.ApiResponse;
 import com.yanger.user.po.User;
 import com.yanger.user.service.BookService;
+import com.yanger.user.service.RibbonService;
 import com.yanger.user.service.UserService;
 import com.yanger.user.vo.BookVo;
 import com.yanger.user.vo.UserVo;
@@ -33,6 +35,9 @@ public class UserApi {
 	
 	@Autowired
 	BookService bookService;
+	
+	@Autowired
+	RibbonService ribbonService;
 	
 	/**
 	 * @description 插入用户
@@ -108,6 +113,56 @@ public class UserApi {
 			api.setData(user);
 		} catch (Exception e) {
 			api.error("根据用户名和密码查找用户异常");
+			e.printStackTrace();
+		}
+		return api;
+	}
+	
+	/**
+	 * @description 根据id查找用户(通过feign调用)
+	 * @author YangHao  
+	 * @time 2019年1月13日-下午5:32:34
+	 * @param userVo
+	 * @return
+	 */
+	@GetMapping("/find/feign/{id}")
+	public ApiResponse<UserVo> findUser(@PathVariable Integer id) {
+		ApiResponse<UserVo> api = new ApiResponse<>();
+		try {
+			UserVo userVo = new UserVo();
+			User user = userService.findUser(id);
+			BeanUtils.copyProperties(user, userVo);
+			List<BookVo> bookVos = bookService.findByIds(user.getLikes());
+			bookVos.forEach(bookVo -> log.info("bookService通过feign调用服务获取数据：{}", bookVo.toString()));
+			userVo.setBooks(bookVos);
+			api.setData(userVo);
+		} catch (Exception e) {
+			api.error("根据id查找用户(通过feign调用)异常");
+			e.printStackTrace();
+		}
+		return api;
+	}
+	
+	/**
+	 * @description 根据id查找用户(通过ribbon调用)
+	 * @author YangHao  
+	 * @time 2019年1月13日-下午5:32:34
+	 * @param userVo
+	 * @return
+	 */
+	@GetMapping("/find/ribbon/{id}")
+	public ApiResponse<UserVo> findUserRibbon(@PathVariable Integer id) {
+		ApiResponse<UserVo> api = new ApiResponse<>();
+		try {
+			UserVo userVo = new UserVo();
+			User user = userService.findUser(id);
+			BeanUtils.copyProperties(user, userVo);
+			List<BookVo> bookVos = ribbonService.findByIds(user.getLikes());
+			bookVos.forEach(bookVo -> log.info("bookService通过ribbon调用服务获取数据：{}", bookVo.toString()));
+			userVo.setBooks(bookVos);
+			api.setData(userVo);
+		} catch (Exception e) {
+			api.error("根据id查找用户(通过ribbon调用)异常");
 			e.printStackTrace();
 		}
 		return api;

@@ -37,4 +37,11 @@ public interface UserDao {
 	 */
 	User find(@Param("userCode") String userCode, @Param("password") String password);
 	
+	/**
+	 * @description 根据id查询用户
+	 * @author YangHao  
+	 * @time 2019年1月13日-下午3:19:24
+	 * @return
+	 */
+	User findById(@Param("id") Integer id);
 }

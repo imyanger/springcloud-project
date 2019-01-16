@@ -9,6 +9,7 @@
 		 <result column="user_code" property="userCode"/> 
 		 <result column="user_name" property="userName"/> 
 		 <result column="password" property="password"/>
+		 <result column="likes" property="likes"/>
 	</resultMap>
 
 	<!-- 通用查询结果列-->
@@ -18,7 +19,7 @@
 	
 	<!-- 完整插入一条记录-->
 	<insert id="insert" parameterType="com.yanger.user.po.User">
-		insert into user(user_code, user_name, password, likes) values(#{userCode}, #{userName}, #{password}), #{likes};
+		insert into user(user_code, user_name, password, likes) values(#{userCode}, #{userName}, #{password}, #{likes});
 	</insert>
 	
 	<!-- 按主键删除一条记录 -->
@@ -34,6 +35,11 @@
 	<!-- 根据用户名和密码查询 -->
 	<select id="find" resultMap="BaseResultMap" parameterType="map">
 		select <include refid="Base_Column_List" />  from user where user_code = #{userCode} and password = #{password}
+	</select>
+	
+	<!-- 根据id查找用户 -->
+	<select id="findById" resultMap="BaseResultMap" parameterType="map">
+		select <include refid="Base_Column_List" />  from user where id = #{id}
 	</select>
 	
 </mapper>

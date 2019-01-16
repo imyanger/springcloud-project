@@ -68,4 +68,16 @@ public class UserService {
 		return userDao.find(userCode, password);
 	}
 	
+	/**
+	 * @description 根据id查找用户
+	 * @author YangHao  
+	 * @time 2019年1月13日-下午4:28:39
+	 * @param userCode
+	 * @param password
+	 * @return
+	 */
+	public User findUser(Integer id) throws Exception {
+		return userDao.findById(id);
+	}
+	
 }

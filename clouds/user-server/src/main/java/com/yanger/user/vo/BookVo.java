@@ -1,6 +1,8 @@
 package com.yanger.user.vo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import lombok.Data;
 

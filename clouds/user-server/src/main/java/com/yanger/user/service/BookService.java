@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.yanger.user.vo.BookVo;
 
-@FeignClient("book-service") //添加@FeignClient注解，声明对book-service的调用
+// 注意服务名不要写错，异常：Load balancer does not have available server for client：xx
+@FeignClient("book-server") //添加@FeignClient注解，声明对book-server的调用
 public interface BookService {
 	
 	@RequestMapping(value = "/book/{ids}", method = RequestMethod.GET)

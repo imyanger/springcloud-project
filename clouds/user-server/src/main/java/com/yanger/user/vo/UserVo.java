@@ -1,6 +1,8 @@
 package com.yanger.user.vo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import lombok.Data;
 
@@ -24,4 +26,7 @@ public class UserVo implements Serializable {
 	//喜爱的书籍id
 	private String likes;
 
+	// 喜欢的书籍
+	List<BookVo> books = new ArrayList<>(0);
+	
 }
