@@ -1,2 +1,0 @@
-No bean named 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry' available
-热部署重启引发的报错，关掉热部署或者不适用热部署重启，或者直接忽略继续使用
