@@ -2,15 +2,6 @@
 server:
   port: 10830
 
-# 配置日志输出级别，将Spring框架设置为INFO级别，而自己所编写的代码设置为DEBUG级别
-logging:
-  file: D:/code/cloud/log/book-server.log
-  level:
-    org:
-      springframework: INFO
-    com:
-      yanger: DEBUG
-
 # 数据源的配置
 spring:
   application:
@@ -41,3 +32,12 @@ eureka:
     fetch-registry: true
   instance:
     instance-id: ${spring.cloud.client.ip-address}-${server.port} #在eureka注册表上显示ip:port
+
+# 配置日志输出级别，将Spring框架设置为INFO级别，而自己所编写的代码设置为DEBUG级别
+logging:
+  file: D:/code/cloud/log/book-server.log
+  level:
+    org:
+      springframework: INFO
+    com:
+      yanger: DEBUG

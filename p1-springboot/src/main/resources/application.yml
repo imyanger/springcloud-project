@@ -2,15 +2,6 @@
 server:
   port: 10800
 
-# 配置日志输出级别，将Spring框架设置为INFO级别，而自己所编写的代码设置为DEBUG级别
-logging:
-  file: D:/code/cloud/log/springboot-project.log
-  level:
-    org:
-      springframework: INFO
-    com:
-      yanger: DEBUG
-
 # 数据源的配置
 spring:
   datasource:
@@ -21,7 +12,7 @@ spring:
     # 使用druid数据源
     type: com.alibaba.druid.pool.DruidDataSource
     
-#mybatis配置，设置po数据库映射文件的路径，以及mapper的xml文件路径
+# mybatis配置，设置po数据库映射文件的路径，以及mapper的xml文件路径
 mybatis:
   typeAliasesPackage: com.yanger.*.po
   mapperLocations: classpath*:mapper/**/*Dao.xml
@@ -29,3 +20,12 @@ mybatis:
     #打印mybatis的sql，方便开发
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     mapUnderscoreToCamelCase: true
+
+# 配置日志输出级别，将Spring框架设置为INFO级别，而自己所编写的代码设置为DEBUG级别
+logging:
+  file: D:/code/cloud/log/springboot-project.log
+  level:
+    org:
+      springframework: INFO
+    com:
+      yanger: DEBUG
