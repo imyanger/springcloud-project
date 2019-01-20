@@ -9,10 +9,10 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/imyanger/springcloud-project/
-          search-paths: p6-config/config-server/config
-          username: 
-          password: 
+          uri: https://github.com/imyanger/springcloud-project.git #git仓库的地址
+          search-paths: p6-config/config-server/config #仓库中文件夹的路径
+          username: #公库地址不需要密码
+          password: #公库地址不需要密码
       label: master
 
 # Eureka相应的配置
