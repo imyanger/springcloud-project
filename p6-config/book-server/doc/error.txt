@@ -1,0 +1,13 @@
+No bean named 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry' available
+热部署重启引发的报错，关掉热部署或者不适用热部署重启，或者直接忽略继续使用
+
+feign:
+  hystrix:
+    enabled: true #开启Feign是自带hystrix断路器功能，默认为关闭false，否则会抛出服务不可用异常：Load balancer does not have available server for client：xx
+    
+zuul-server中2.1.1.RELEASE版本springboot会报错，可更换版本为2.0.3.RELEASE，正常启动
+	It was loaded from the following location:
+    	file:/D:/code/repo/org/springframework/boot/spring-boot-autoconfigure/2.1.1.RELEASE/spring-boot-autoconfigure-2.1.1.RELEASE.jar
+	Action:
+		Correct the classpath of your application so that it contains a single, compatible version of org.springframework.boot.autoconfigure.web.ServerProperties$Servlet
+    
