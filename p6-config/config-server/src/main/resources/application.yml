@@ -4,7 +4,7 @@ server:
 spring:
   application:
     name: config-server #服务名称
-  # config配置
+  # config配置 #yml访问:http://localhost:10850/book-server-dev.yml
   cloud:
     config:
       server:
