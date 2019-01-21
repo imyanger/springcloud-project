@@ -15,10 +15,10 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
   # rabbitmq配置
   rabbitmq:
-    host: 10.10.0.253
+    host: localhost
     port: 5672
     username: admin
-    password: rabbit2017
+    password: 1234
   cloud:
     bus:
       enabled: true
