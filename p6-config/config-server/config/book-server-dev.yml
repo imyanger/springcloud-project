@@ -1,5 +1,5 @@
 redis: 
-  ip: localhost
+  ip: localhost-new
   port: 6379
   username: root
   password: 1234
