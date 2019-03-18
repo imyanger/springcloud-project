@@ -27,6 +27,6 @@ public class UserVo implements Serializable {
 	private String likes;
 
 	// 喜欢的书籍
-	List<BookVo> books = new ArrayList<>(0);
+	private List<BookVo> books = new ArrayList<>(0);
 	
 }
