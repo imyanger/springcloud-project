@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import com.yanger.user.vo.BookVo;
 
 @Component
-public class BookFallBackService implements BookService{
+public class BookFallBackService implements BookService {
 
 	/**
 	 * @description feign调用使用hystrix处理的熔断方法，当服务不可用时，会调用fallback实现类

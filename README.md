@@ -9,5 +9,7 @@
 
 [SpringCloud系列：3.服务的注册与发现Eureka](https://blog.csdn.net/Simple_Yangger/article/details/87909781)
 
-[SpringCloud系列：4.负载均衡rabbon及断路器hystrix](https://blog.csdn.net/Simple_Yangger/article/details/87909896)
+[SpringCloud系列：4.负载均衡Ribbon及断路器Hystrix](https://blog.csdn.net/Simple_Yangger/article/details/87909896)
+
+[SpringCloud系列：5.微服务间调用Feign](https://blog.csdn.net/Simple_Yangger/article/details/89162580)
 
