@@ -13,3 +13,5 @@
 
 [SpringCloud系列：5.微服务间调用Feign](https://blog.csdn.net/Simple_Yangger/article/details/89162580)
 
+[SpringCloud系列：6.微服务网关服务Zuul](https://blog.csdn.net/Simple_Yangger/article/details/89296741)
+
