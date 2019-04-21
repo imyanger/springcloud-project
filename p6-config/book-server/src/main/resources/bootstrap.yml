@@ -2,7 +2,7 @@
 spring:
   cloud:
     config:
-      # 1.uri: http://localhost:10850 #config的地址，当config未在配置中心注册也可以使用，但需要指定ip
+      # 1.uri: http://localhost:10850 #config的地址，当config未在注册中心eureka注册也可以使用，但需要指定ip
       name: book-server #配置文件的前缀，当服务名与配置文件名前缀相同时，可不配置
       profile: dev #配置文件后缀，即请求文件为{name}-{profile}.yml
       discovery:

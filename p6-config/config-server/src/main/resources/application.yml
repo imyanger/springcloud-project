@@ -11,7 +11,7 @@ spring:
         git:
           uri: https://github.com/imyanger/springcloud-project.git #git仓库的地址
           search-paths: p6-config/config-server/config #仓库中文件夹的路径
-          username: #公库地址不需要密码
+          username: #公库地址不需要账号
           password: #公库地址不需要密码
       label: master
 
