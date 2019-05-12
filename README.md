@@ -16,3 +16,8 @@
 [SpringCloud系列：6.微服务网关服务Zuul](https://blog.csdn.net/Simple_Yangger/article/details/89296741)
 
 [SpringCloud系列：7.微服务统一配置中心Config](https://blog.csdn.net/Simple_Yangger/article/details/89439962)
+
+
+[SpringCloud系列：8.微服务消息总栈Bus](https://blog.csdn.net/Simple_Yangger/article/details/90050647)
+
+[SpringCloud系列：9.微服务服务链路追踪Sleuth](https://blog.csdn.net/Simple_Yangger/article/details/90141540)
