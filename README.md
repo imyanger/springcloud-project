@@ -17,7 +17,10 @@
 
 [SpringCloud系列：7.微服务统一配置中心Config](https://blog.csdn.net/Simple_Yangger/article/details/89439962)
 
-
 [SpringCloud系列：8.微服务消息总栈Bus](https://blog.csdn.net/Simple_Yangger/article/details/90050647)
 
 [SpringCloud系列：9.微服务服务链路追踪Sleuth](https://blog.csdn.net/Simple_Yangger/article/details/90141540)
+
+[SpringCloud系列：10.Spring Cloud Sleuth与Spring Cloud Bus冲突问题](https://blog.csdn.net/Simple_Yangger/article/details/90247460)
+
+[SpringCloud系列：11.高可用注册中心Eurake](https://blog.csdn.net/Simple_Yangger/article/details/90349982)
