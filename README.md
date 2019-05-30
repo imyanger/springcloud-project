@@ -24,3 +24,5 @@
 [SpringCloud系列：10.Spring Cloud Sleuth与Spring Cloud Bus冲突问题](https://blog.csdn.net/Simple_Yangger/article/details/90247460)
 
 [SpringCloud系列：11.高可用注册中心Eurake](https://blog.csdn.net/Simple_Yangger/article/details/90349982)
+
+[SpringCloud系列：12.微服务断路器监控系统Hystrix Dashboard](https://blog.csdn.net/Simple_Yangger/article/details/90681733)
