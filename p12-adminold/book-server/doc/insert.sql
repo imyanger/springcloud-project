@@ -1,7 +1,0 @@
-CREATE TABLE book( 
-	`id` INT NOT NULL AUTO_INCREMENT, 
-	`name` VARCHAR(100), 
-	`author` VARCHAR(100), 
-	`price` DOUBLE(6,2), 
-	PRIMARY KEY (`id`) 
-) ENGINE=INNODB CHARSET=utf8;
