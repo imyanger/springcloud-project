@@ -32,9 +32,8 @@ public class BookServerApplication {
 		return Sampler.ALWAYS_SAMPLE;
 	}
 
-	// 需要提供ServletRegistrationBean，不然仪表盘不显示
-	// 但在user-server中无需添加也可显示，暂原因不明
-	@Bean
+	// 提供ServletRegistrationBean，对外暴露/actuator/hystrix.stream地址，不然/actuator/hystrix.stream无法访问
+	/*@Bean
 	public ServletRegistrationBean getServlet() {
 		HystrixMetricsStreamServlet streamServlet = new HystrixMetricsStreamServlet();
 		ServletRegistrationBean registrationBean = new ServletRegistrationBean(streamServlet);
@@ -43,6 +42,6 @@ public class BookServerApplication {
 		registrationBean.setName("HystrixMetricsStreamServlet");
 		registrationBean.setName("HystrixMetricsStreamServlet");
 		return registrationBean;
-	}
+	}*/
 
 }

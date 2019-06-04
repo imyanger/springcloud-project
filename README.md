@@ -26,3 +26,5 @@
 [SpringCloud系列：11.高可用注册中心Eurake](https://blog.csdn.net/Simple_Yangger/article/details/90349982)
 
 [SpringCloud系列：12.微服务断路器监控系统Hystrix Dashboard](https://blog.csdn.net/Simple_Yangger/article/details/90681733)
+
+[SpringCloud系列：13.微服务断路器聚合监控系统Hystrix Turbine](https://blog.csdn.net/Simple_Yangger/article/details/90814949)

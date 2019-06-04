@@ -41,7 +41,11 @@ management:
   endpoints: 
     web:
       exposure:
-        include: bus-refresh
+        #include: bus-refresh,hystrix.stream #配置hystrix.stream暴露出断路器监控访问地址
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
     
 # mybatis配置，设置po数据库映射文件的路径，以及mapper的xml文件路径
 mybatis:

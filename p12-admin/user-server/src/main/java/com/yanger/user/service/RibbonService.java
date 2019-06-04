@@ -11,6 +11,9 @@ import org.springframework.web.client.RestTemplate;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.yanger.user.vo.BookVo;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 public class RibbonService {
 
@@ -39,6 +42,7 @@ public class RibbonService {
 	 */
 	public List<BookVo> findByIdsFallback(String ids) {
 		return new ArrayList<BookVo>(){{
+			log.info("获取图书失败，ribbon方式的hystrix熔断方法");
 			BookVo bookVo = new BookVo();
 			bookVo.setName("获取图书失败，ribbon方式的hystrix熔断方法");
 			add(bookVo);

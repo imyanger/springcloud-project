@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
+import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -13,6 +14,7 @@ import org.springframework.web.client.RestTemplate;
 
 import brave.sampler.Sampler;
 
+@EnableHystrixDashboard // hystrix仪表盘支持，访问地址 http://localhost:10820/actuator/hystrix.stream、http://localhost:10820/hystrix
 @EnableHystrix // 开启hystrix功能
 @EnableFeignClients // @EnableFeignClients注解，用来为应用开启Feign相关功能
 @EnableEurekaClient

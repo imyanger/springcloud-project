@@ -39,12 +39,24 @@ eureka:
   instance:
     prefer-ip-address: false #使用feign时需要指定为false，否则注册到ribbon服务列表上的服务显示机器名
     instance-id: ${spring.cloud.client.ip-address}-${server.port} #在eureka注册表上显示ip:port
-    health-check-url-path: /actuator/health   #应用实例的相对运行状况检查URL路径默认为 /info/health
 
 # hystrix配置
 feign:
   hystrix:
     enabled: true #开启Feign是自带hystrix断路器功能，默认为关闭false
+
+# dashboard配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+  endpoint:
+      health:
+        show-details: ALWAYS
     
 # 配置日志输出级别，将Spring框架设置为INFO级别，而自己所编写的代码设置为DEBUG级别
 logging:
@@ -54,12 +66,3 @@ logging:
       springframework: INFO
     com:
       yanger: DEBUG
- 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"   #暴露所有的端点我们可以看到更多的服务实例相关信息，
-  endpoint:
-    health:
-      show-details: ALWAYS   #health endpoint是否必须显示全部细节
