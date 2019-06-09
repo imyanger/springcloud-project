@@ -28,3 +28,5 @@
 [SpringCloud系列：12.微服务断路器监控系统Hystrix Dashboard](https://blog.csdn.net/Simple_Yangger/article/details/90681733)
 
 [SpringCloud系列：13.微服务断路器聚合监控系统Hystrix Turbine](https://blog.csdn.net/Simple_Yangger/article/details/90814949)
+
+[SpringCloud系列：14.微服务管理和监控系统Spring Boot Admin](https://blog.csdn.net/Simple_Yangger/article/details/91352026)
